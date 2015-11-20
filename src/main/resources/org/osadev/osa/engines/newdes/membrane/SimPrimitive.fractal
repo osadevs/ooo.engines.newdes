@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+<!--                Open Simulation Architecture (OSA)                  -->
+<!--                                                                    -->
+<!--      This software is distributed under the terms of the           -->
+<!--           CECILL-C FREE SOFTWARE LICENSE AGREEMENT                 -->
+<!--  (see http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html) -->
+<!--                                                                    -->
+<!--  Copyright © 2006-2015 Université Nice Sophia Antipolis            -->
+<!--  Contact author: Olivier Dalle (olivier.dalle@unice.fr)            -->
+<!--                                                                    -->
+<!--  Parts of this software development were supported and hosted by   -->
+<!--  INRIA from 2006 to 2015, in the context of the common research    -->
+<!--  teams of INRIA and I3S, UMR CNRS 7172 (MASCOTTE, COATI, OASIS and -->
+<!--  SCALE).                                                           -->
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+<!DOCTYPE definition PUBLIC "-//objectweb.org//DTD Fractal ADL 2.0//EN" 
+	"classpath://org/objectweb/fractal/adl/xml/standard.dtd">
+
+<definition name="org.osadev.osa.engines.newdes.membrane.SimPrimitive"
+	extends="org.osadev.osa.engines.newdes.membrane.SimBasicPrimitive">
+		
+	<interface name="//modeling-process-controller"
+		signature="org.osadev.osa.simapis.modeling.ProcessModelingAPI"
+		role="server" />
+		
+	<interface name="//simulation-controller"
+		signature="org.osadev.osa.simapis.simulation.ProcessSimulationControllerAPI"
+		role="server" />
+
+	<component name="SimC">
+	
+		<interface name="//simulation-controller"
+			signature="org.osadev.osa.simapis.simulation.ProcessSimulationControllerAPI"
+			role="server" />
+			
+		<interface name="//modeling-process-controller"
+			signature="org.osadev.osa.simapis.modeling.ProcessModelingAPI"
+			role="server" />
+			
+		<content class="org.osadev.osa.engines.newdes.impl.llong.ProcessSimulationControllerImpl" />
+		<controller desc="mPrimitive" />
+	</component>
+
+	<binding client="this.//modeling-process-controller" server="SimC.//modeling-process-controller" />
+	
+</definition>

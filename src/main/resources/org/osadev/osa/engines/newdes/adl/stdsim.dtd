@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+<!--                Open Simulation Architecture (OSA)                  -->
+<!--                                                                    -->
+<!--      This software is distributed under the terms of the           -->
+<!--           CECILL-C FREE SOFTWARE LICENSE AGREEMENT                 -->
+<!--  (see http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html) -->
+<!--                                                                    -->
+<!--  Copyright © 2006-2015 Université Nice Sophia Antipolis            -->
+<!--  Contact author: Olivier Dalle (olivier.dalle@unice.fr)            -->
+<!--                                                                    -->
+<!--  Parts of this software development were supported and hosted by   -->
+<!--  INRIA from 2006 to 2015, in the context of the common research    -->
+<!--  teams of INRIA and I3S, UMR CNRS 7172 (MASCOTTE, COATI, OASIS and -->
+<!--  SCALE).                                                           -->
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+	
+<!-- A DTD based on Fractal's "standard" DTD with a simple extension module
+   * to support insertion of OSA's exogenous events 
+   -->
+
+<!-- ********************************************************************** -->
+<!--                          AST nodes definitions                         -->
+<!-- ********************************************************************** -->
+
+<?add ast="definition" itf="org.objectweb.fractal.adl.Definition" ?>
+
+<!-- components module -->
+<?add ast="component"  itf="org.objectweb.fractal.adl.components.Component" ?>
+<?add ast="definition" itf="org.objectweb.fractal.adl.components.ComponentDefinition" ?>
+
+<!-- interfaces module -->
+<?add ast="interface"  itf="org.objectweb.fractal.adl.interfaces.Interface" ?>
+<?add ast="definition" itf="org.objectweb.fractal.adl.interfaces.InterfaceContainer" ?>
+<?add ast="component"  itf="org.objectweb.fractal.adl.interfaces.InterfaceContainer" ?>
+
+<!-- types module -->
+<?add ast="interface"  itf="org.objectweb.fractal.adl.types.TypeInterface" ?>
+
+<!-- bindings module -->
+<?add ast="binding"    itf="org.objectweb.fractal.adl.bindings.Binding" ?>
+<?add ast="definition" itf="org.objectweb.fractal.adl.bindings.BindingContainer" ?>
+<?add ast="component"  itf="org.objectweb.fractal.adl.bindings.BindingContainer" ?>
+
+<!-- attributes module -->
+<?add ast="attribute"  itf="org.objectweb.fractal.adl.attributes.Attribute" ?>
+<?add ast="attributes" itf="org.objectweb.fractal.adl.attributes.Attributes" ?>
+<?add ast="definition" itf="org.objectweb.fractal.adl.attributes.AttributesContainer" ?>
+<?add ast="component"  itf="org.objectweb.fractal.adl.attributes.AttributesContainer" ?>
+
+<!-- implementations module -->
+<?add ast="implementation" itf="org.objectweb.fractal.adl.implementations.Implementation" ?>
+<?add ast="definition"     itf="org.objectweb.fractal.adl.implementations.ImplementationContainer" ?>
+<?add ast="component"      itf="org.objectweb.fractal.adl.implementations.ImplementationContainer" ?>
+<?add ast="controller"     itf="org.objectweb.fractal.adl.implementations.Controller" ?>
+<?add ast="definition"     itf="org.objectweb.fractal.adl.implementations.ControllerContainer" ?>
+<?add ast="component"      itf="org.objectweb.fractal.adl.implementations.ControllerContainer" ?>
+<?add ast="templateController" itf="org.objectweb.fractal.adl.implementations.TemplateController" ?>
+<?add ast="definition"     itf="org.objectweb.fractal.adl.implementations.TemplateControllerContainer" ?>
+<?add ast="component"      itf="org.objectweb.fractal.adl.implementations.TemplateControllerContainer" ?>
+
+<!-- loggers module -->
+<?add ast="logger"     itf="org.objectweb.fractal.adl.loggers.Logger" ?>
+<?add ast="definition" itf="org.objectweb.fractal.adl.loggers.LoggerContainer" ?>
+<?add ast="component"  itf="org.objectweb.fractal.adl.loggers.LoggerContainer" ?>
+
+<!-- nodes module -->
+<?add ast="virtualNode" itf="org.objectweb.fractal.adl.nodes.VirtualNode" ?>
+<?add ast="definition"  itf="org.objectweb.fractal.adl.nodes.VirtualNodeContainer" ?>
+<?add ast="component"   itf="org.objectweb.fractal.adl.nodes.VirtualNodeContainer" ?>
+
+<!-- arguments module -->
+<?add ast="definition" itf="org.objectweb.fractal.adl.arguments.ArgumentDefinition" ?>
+
+<!-- coordinates module -->
+<?add ast="coordinates" itf="org.objectweb.fractal.adl.coordinates.Coordinates" ?>
+<?add ast="definition"  itf="org.objectweb.fractal.adl.coordinates.CoordinatesContainer" ?>
+<?add ast="component"   itf="org.objectweb.fractal.adl.coordinates.CoordinatesContainer" ?>
+
+<!-- exoevents module -->
+<?add ast="exoevents" 	itf="org.osadev.osa.engines.newdes.adl.exoevents.interfaces.Exoevents" ?>
+<?add ast="definition" 	itf="org.osadev.osa.engines.newdes.adl.exoevents.interfaces.ExoeventsContainer" ?>
+<?add ast="component"  	itf="org.osadev.osa.engines.newdes.adl.exoevents.interfaces.ExoeventsContainer" ?>
+<?add ast="exoevent"	itf="org.osadev.osa.engines.newdes.adl.exoevents.interfaces.Exoevent" ?>
+
+
+
+<!-- comments module -->
+<?add ast="comment"        itf="org.objectweb.fractal.adl.comments.Comment" ?>
+<?add ast="definition"     itf="org.objectweb.fractal.adl.comments.CommentContainer" ?>
+<?add ast="component"      itf="org.objectweb.fractal.adl.comments.CommentContainer" ?>
+<?add ast="interface"      itf="org.objectweb.fractal.adl.comments.CommentContainer" ?>
+<?add ast="binding"        itf="org.objectweb.fractal.adl.comments.CommentContainer" ?>
+<?add ast="attributes"     itf="org.objectweb.fractal.adl.comments.CommentContainer" ?>
+<?add ast="attribute"      itf="org.objectweb.fractal.adl.comments.CommentContainer" ?>
+<?add ast="controller"     itf="org.objectweb.fractal.adl.comments.CommentContainer" ?>
+<?add ast="exoevents"      itf="org.objectweb.fractal.adl.comments.CommentContainer" ?>
+<?add ast="exoevent"      itf="org.objectweb.fractal.adl.comments.CommentContainer" ?>
+<?add ast="templateController" itf="org.objectweb.fractal.adl.comments.CommentContainer" ?>
+<?add ast="implementation" itf="org.objectweb.fractal.adl.comments.CommentContainer" ?>
+
+
+<!-- ********************************************************************** -->
+<!--                   Mapping from XML names to AST names                  -->
+<!-- ********************************************************************** -->
+
+<?map xml="binding.client" ast="binding.from" ?>
+<?map xml="binding.server" ast="binding.to" ?>
+
+<?map xml="content" ast="implementation" ?>
+<?map xml="content.class" ast="implementation.className" ?>
+
+<?map xml="controller.desc" ast="controller.descriptor" ?>
+
+<?map xml="template-controller"      ast="templateController" ?>
+<?map xml="template-controller.desc" ast="templateController.descriptor" ?>
+
+<?map xml="virtual-node" ast="virtualNode" ?>
+
+<!-- ********************************************************************** -->
+<!--                          XML syntax definition                         -->
+<!-- ********************************************************************** -->
+
+<!ELEMENT definition (comment*,interface*,component*,binding*,content?,attributes?,controller?,template-controller?,logger?,virtual-node?,coordinates*,exoevents?)>
+<!ATTLIST definition
+  name CDATA #REQUIRED
+  arguments CDATA #IMPLIED
+  extends CDATA #IMPLIED
+>
+
+<!ELEMENT component (comment*,interface*,component*,binding*,content?,attributes?,controller?,template-controller?,logger?,virtual-node?,coordinates*,exoevents?)>
+<!ATTLIST component
+  name CDATA #REQUIRED
+  definition CDATA #IMPLIED
+>
+
+<!ELEMENT interface (comment*) >
+<!ATTLIST interface
+  name CDATA #REQUIRED
+  role (client | server) #IMPLIED
+  signature CDATA #IMPLIED
+  contingency (mandatory | optional) #IMPLIED
+  cardinality (singleton | collection) #IMPLIED
+>
+
+<!ELEMENT binding (comment*) >
+<!ATTLIST binding
+  client CDATA #REQUIRED
+  server CDATA #REQUIRED
+>
+
+<!ELEMENT attributes (comment*,attribute*) >
+<!ATTLIST attributes
+  signature CDATA #IMPLIED
+>
+
+<!ELEMENT attribute (comment*) >
+<!ATTLIST attribute
+  name CDATA #REQUIRED
+  value CDATA #REQUIRED
+>
+
+<!ELEMENT controller (comment*) >
+<!ATTLIST controller
+  desc CDATA #REQUIRED
+>
+
+<!ELEMENT template-controller (comment*) >
+<!ATTLIST template-controller
+  desc CDATA #REQUIRED
+>
+
+<!ELEMENT content (comment*) >
+<!ATTLIST content
+  class CDATA #REQUIRED
+>
+
+<!ELEMENT logger EMPTY >
+<!ATTLIST logger 
+  name CDATA #REQUIRED
+>
+
+<!ELEMENT virtual-node EMPTY >
+<!ATTLIST virtual-node
+  name CDATA #REQUIRED
+>
+
+<!ELEMENT coordinates (coordinates*) >
+<!ATTLIST coordinates
+  name  CDATA #REQUIRED
+  x0    CDATA #REQUIRED
+  x1    CDATA #REQUIRED
+  y0    CDATA #REQUIRED
+  y1    CDATA #REQUIRED
+  color CDATA #IMPLIED
+>
+
+<!ELEMENT comment EMPTY >
+<!ATTLIST comment
+  language CDATA #IMPLIED
+  text CDATA #IMPLIED
+>
+
+
+<!-- type and name attributes are ignored in newdes version -->
+<!ELEMENT exoevent (comment*) >
+<!ATTLIST exoevent
+	time	CDATA #REQUIRED
+	method 	CDATA #REQUIRED
+	param	CDATA #IMPLIED
+>
+
+<!ELEMENT exoevents (comment*, exoevent*) >
+<!ATTLIST exoevents
+  signature CDATA #IMPLIED
+>
+
