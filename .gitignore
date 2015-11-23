@@ -1,7 +1,0 @@
-.settings
-*~
-#*
-target/
-*.md.html
-/bin/
-.#.*
