@@ -5,3 +5,4 @@ target/
 *.md.html
 /bin/
 .#.*
+/org/osadev/osa/engines/newdes/membrane/*
