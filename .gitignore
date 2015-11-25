@@ -5,4 +5,4 @@ target/
 *.md.html
 /bin/
 .#.*
-/org/osadev/osa/engines/newdes/membrane/*
+/src/main/java/org/osadev/osa/engines/newdes/membrane/
