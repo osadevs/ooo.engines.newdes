@@ -21,7 +21,7 @@
 	<parent>
 		<artifactId>osa-engines</artifactId>
 		<groupId>org.osadev.osa.engines</groupId>
-		<version>0.8.0-SNAPSHOT</version>
+		<version>0.8.1-SNAPSHOT</version>
 		<relativePath>../ooo.engines/</relativePath>
 	</parent>
 
